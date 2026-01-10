@@ -10,26 +10,30 @@ A Kiro Power for Chrome DevTools MCP that enables browser automation, debugging,
 
 ## Features
 
-- Browser automation and control
-- Performance tracing and Web Vitals analysis
-- Network request inspection
-- DOM debugging and snapshots
-- Console message capture
-- Device emulation and viewport testing
+- **Browser automation**: Click, fill forms, navigate pages, upload files
+- **Performance analysis**: Trace page load, analyze Core Web Vitals (LCP, CLS, FID)
+- **Network debugging**: Inspect HTTP requests, check API responses
+- **DOM debugging**: Take screenshots, inspect HTML, check console logs
+- **Device emulation**: Test on mobile, tablet, or custom viewports
 
-## Configuration
+## What's Included
 
-See `POWER.md` for detailed setup and workflow instructions.
+- **POWER.md**: Complete documentation with setup instructions, best practices, and workflow guides
+- **mcp.json**: MCP server configuration (ready to use with default Chrome launch)
+- **steering/** folder: Detailed workflow guides for specific tasks:
+  - `performance-analysis.md` - Web performance optimization guides
+  - `browser-automation.md` - Form filling, clicking, navigation examples
+  - `debugging-workflows.md` - Console logs, DOM inspection, error handling
+  - `network-debugging.md` - API debugging, request inspection, CORS issues
 
-## File Structure
+## Activation Keywords
 
-```
-power-chrome-devtools-mcp/
-ÃÄÄ POWER.md       # Main documentation with frontmatter, onboarding, and workflows
-ÃÄÄ mcp.json       # MCP server configuration
-ÃÄÄ README.md      # Quick reference guide
-ÀÄÄ steering/      # Optional: Workflow-specific guidance files
-```
+Kiro automatically loads this power when you mention:
+- "Chrome DevTools", "DevTools MCP", "Chrome automation"
+- "browser control", "navigate a site", "click buttons"
+- "performance analysis", "Web Vitals", "network debugging"
+- "browser testing", "web scraping", "form automation"
+- "debugging", "troubleshooting", "inspecting a website"
 
 ## Installation
 
@@ -38,8 +42,44 @@ power-chrome-devtools-mcp/
 3. Select the `power-chrome-devtools-mcp` directory
 4. Test by mentioning "Chrome DevTools" or "browser automation" in a conversation
 
+## Configuration
+
+See **POWER.md** for:
+- Prerequisites and validation steps
+- Chrome launch options (automatic vs. remote debugging)
+- Security considerations
+- Detailed workflow guides with code examples
+
+## Example Workflows
+
+### Performance Analysis
+1. Navigate to page
+2. Start performance trace with `performance_start_trace`
+3. Perform user actions
+4. Stop trace and analyze with `performance_analyze_insight`
+
+### Browser Automation
+1. Navigate to page with `navigate_page`
+2. Fill form with `fill_form`
+3. Click submit with `click`
+4. Wait for results with `wait_for`
+
+### Network Debugging
+1. List network requests with `list_network_requests`
+2. Inspect specific requests with `get_network_request`
+3. Check response bodies and headers
+4. Identify failed (4xx, 5xx) or slow requests
+
 ## Troubleshooting
 
-- Verify Node.js and npm versions: `node -v && npm -v`
-- Ensure Google Chrome is installed: Open Chrome or check Program Files
-- Check MCP logs in Kiro for connection issues
+- **Node.js not found**: Verify installation with `node -v` (requires v20.19+)
+- **Chrome not launching**: Check Chrome is installed; enable `--isolated` flag in mcp.json for sandbox issues
+- **Remote debugging fails**: Enable `chrome://inspect/#remote-debugging` and use `--autoConnect` flag
+- **Permission issues**: Use `--user-data-dir` with a dedicated profile directory
+
+## Resources
+
+- [Chrome DevTools MCP GitHub](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+- [Tool Reference](https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md)
+- [Troubleshooting Guide](https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/troubleshooting.md)
+- [Kiro Powers Documentation](https://kiro.dev/docs/powers/)

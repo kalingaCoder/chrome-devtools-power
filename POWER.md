@@ -97,10 +97,21 @@ Use this when APIs are failing or data is not loading:
 
 Use emulation tools before running performance or correctness checks in alternate environments.
 
-## When Kiro should activate this power
+# When Kiro Should Load Steering Files
+
+Kiro loads specific steering files based on the current task:
+
+- **Performance analysis** (LCP, CLS, Core Web Vitals, speed optimization) → `performance-analysis.md`
+- **Browser automation** (form filling, clicking, navigation, input automation) → `browser-automation.md`
+- **Debugging workflows** (console logs, DOM inspection, JavaScript errors, screenshots) → `debugging-workflows.md`
+- **Network debugging** (API issues, request inspection, failed requests, CORS) → `network-debugging.md`
+
+# When Kiro Should Activate This Power
 
 Kiro should load this power when the user:
 - Mentions **Chrome DevTools**, **DevTools MCP**, or **Chrome automation**.
 - Asks to "control the browser", "navigate a site", or "click/fill forms".
 - Requests **performance analysis**, **web vitals debugging**, or **network debugging**.
 - Wants DOM snapshots, screenshots, or console logs for a web page.
+- Asks for **form automation**, **web scraping**, or **browser testing**.
+- Mentions **debugging**, **troubleshooting**, or **inspecting** a web application.
